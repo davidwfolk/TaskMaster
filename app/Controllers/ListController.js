@@ -7,6 +7,7 @@ function _drawLists() {
   let lists = _store.State.lists
 
   lists.forEach(list => (template += list.Template));
+  document.getElementById("lists").innerHTML = template
 }
 
 //Public
@@ -17,5 +18,11 @@ export default class ListController {
   }
 
   //TODO: Your app will need the ability to create, and delete both lists and listItems
-  
+  create(event) {
+    event.preventDefault()
+    let formData = event.target
+    let event = {
+      title: formData.event.value
+    }
+  }
 }
