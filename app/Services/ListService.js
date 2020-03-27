@@ -20,14 +20,7 @@ class ListService {
     _store.saveState()
 }
 
-// addList(newToppingData, listId) {
-//   let newTopping = new Topping(newToppingData)
-//   let list = _store.State.lists.find(list => list.id
-//     == listId)
-//   list.push(newTopping)
-//   console.log(list)
-//   _store.saveState()
-// }
+
 }
 
 const SERVICE = new ListService();

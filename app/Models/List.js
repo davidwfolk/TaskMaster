@@ -21,7 +21,7 @@ export default class List {
             <input type="text" name="lists" class="form-control text-primary" placeholder="Type an item here..." aria-describedby="helpId">
           </div>
         </form>
-        <h5 class="text-primary">Items List:</h5>
+        <h5 class="text-primary">Tasks to be Done:</h5>
         <dl class='text-primary'>
         </dl>
       </div>
