@@ -8,7 +8,6 @@ function _drawLists() {
   let lists = _store.State.lists
 
   lists.forEach(list => (template += list.Template));
-  
   document.getElementById("lists").innerHTML = template
 }
 
@@ -41,11 +40,19 @@ export default class ListController {
   addTask (event, listId) {
     event.preventDefault()
     let formData = event.target
-    let newTask = {
-      task: formData.taskName.value
-    }
+    // let newTask = {
+    //   task: formData.taskName.value
+    // }
+    let newTask = formData.taskName.value
+
   ListService.addTask(newTask, listId)
   formData.reset()
   _drawLists()
+  }
+
+  deleteTask (taskId) {
+    
+
+    _drawLists()
   }
 }

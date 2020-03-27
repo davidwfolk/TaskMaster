@@ -20,10 +20,16 @@ class ListService {
     _store.saveState()
 }
 
- addTask (newTaskData, listId) {
-   let newTask = 
-   _store.State.lists.push(newTask)
+  addTask (newTaskData, listId) {
+   let list = _store.State.lists.find(list => list.id == listId)
+   list.tasks.push(newTaskData)
+   
+  
    _store.saveState()
+ }
+
+ deleteTask() {
+
  }
 }
 

@@ -4,7 +4,7 @@ export default class List {
   constructor(data) {
     //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
     this.title = data.title
-    this.task = data.task
+    this.tasks = data.tasks || []
     this.id = data.id || generateId();
   }
   //Be sure to add the methods needed to create the view template for this model
@@ -23,22 +23,22 @@ export default class List {
           </div>
         </form>
         <h5 class="text-primary">Tasks to be Done:</h5>
-        <dl class='text-primary'>
-        </dl>
-      </div>
-    
-    `
+        <dl class='text-primary'>${this.Task}</dl>
+        </div>
+        
+        `
   }
 
-  get Task () {
-    return /*html*/`
-      <dd>
-      <button type="button" class="close text-danger" onclick="app.pizzaController.delete('${pizzaId}','${this.id}')">
+  get Task() {
+    let template = ''
+    this.tasks.forEach((task, index) => template += `<dd>
+      <div>${task} ${index}</div>
+      <button type="button" class="close text-danger" onclick="app.listController.deleteTask('${task}')">
       <span>&times;</span>
       </button>
-      <h5>${this.title}</h5>
-      </dd>
-    `
+      </dd>`)
+    
+    return template
   }
 
   }
