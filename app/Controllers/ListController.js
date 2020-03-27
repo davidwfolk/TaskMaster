@@ -21,8 +21,17 @@ export default class ListController {
   create(event) {
     event.preventDefault()
     let formData = event.target
-    let event = {
-      title: formData.event.value
+    let newList = {
+      title: formData.listName.value
     }
+
+    ListService.create(newList)
+    formData.reset()
+    _drawLists()
+  }
+  delete(listId) {
+    console.log(listId)
+    ListService.delete(listId)
+    _drawLists()
   }
 }

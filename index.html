@@ -13,9 +13,9 @@
     <title>Task Master</title>
   </head>
 
-<body class="bg-dark">
+<body class="bg-light">
   <section class='section-1'>
-    <header class='container-fluid bg-warning text-center text-white'>
+    <header class='container-fluid bg-dark text-center text-white'>
       <h1 class=''>Task Master
       </h1>
     </header>
@@ -24,16 +24,18 @@
   <main class="container-fluid bg-secondary text-warning">
     <div class="row">
         <div class="col-12">
-            <form class="w-25" onsubmit="app.listController.create(event)">
-                <div class="form-group">
-                    <label for="event">List Name</label>
-                    <input type="text" name="event" class="form-control" placeholder="Enter list name here...">
-                </div>
-                <button type="submit" class="btn btn-primary">+</button>
+            <form class="w-50" onsubmit="app.listController.create(event)">
+              
+                <div class="form-group pt-3">
+                    <label class="text-light" for="listName">List Name</label>
+                    <input type="text" name="listName" class="form-control" placeholder="Enter list name here...">
+                    <button type="submit" class="btn btn-primary m-2">Create List</button>
+                  </div>
+                
             </form>
         </div>
     </div>
-    <div class="row" id="lists">
+    <div class="row bg-light p-4" id="lists">
         <!-- drawLists injects in here -->
     </div>
 </main>
