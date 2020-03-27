@@ -4,6 +4,7 @@ export default class List {
   constructor(data) {
     //TODO Your constructor takes in a data object that should have the properties you need to create your list here is a freebie, it will set the id its provided, or if that is undefined it will create a new one (this is an alternative to object destructuring)
     this.title = data.title
+    this.task = data.task
     this.id = data.id || generateId();
   }
   //Be sure to add the methods needed to create the view template for this model
@@ -15,10 +16,10 @@ export default class List {
       <span>&times;</span>
       </button>
         <h1 class="text-primary">${this.title}</h1>
-        <form onsubmit="app.listController.addList(event, '${this.id}')">
+        <form onsubmit="app.listController.addTask(event, '${this.id}')">
           <div class="form-group">
-            <label class="text-primary" for="listName">Items:</label>
-            <input type="text" name="lists" class="form-control text-primary" placeholder="Type an item here..." aria-describedby="helpId">
+            <label class="text-primary" for="taskName">Items:</label>  
+            <input type="text" name="taskName" class="form-control text-primary" placeholder="Type an item here..." aria-describedby="helpId">
           </div>
         </form>
         <h5 class="text-primary">Tasks to be Done:</h5>
@@ -28,4 +29,16 @@ export default class List {
     
     `
   }
-}
+
+  get Task () {
+    return /*html*/`
+      <dd>
+      <button type="button" class="close text-danger" onclick="app.pizzaController.delete('${pizzaId}','${this.id}')">
+      <span>&times;</span>
+      </button>
+      <h5>${this.title}</h5>
+      </dd>
+    `
+  }
+
+  }

@@ -20,7 +20,11 @@ class ListService {
     _store.saveState()
 }
 
-
+ addTask (newTaskData, listId) {
+   let newTask = 
+   _store.State.lists.push(newTask)
+   _store.saveState()
+ }
 }
 
 const SERVICE = new ListService();
