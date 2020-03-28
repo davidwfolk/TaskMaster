@@ -37,7 +37,7 @@ class ListService {
  }
 
  deleteTask(index, listId) {
-  if (confirm("Do you want to delete this list?") == true){ 
+  if (confirm("Do you want to delete this task?") == true){ 
 
     let list = _store.State.lists.find(list => list.id == listId)
     list.tasks.splice(index, 1)

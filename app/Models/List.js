@@ -32,7 +32,7 @@ export default class List {
   get Task() {
     let taskTemplate = ''
     this.tasks.forEach((task, index) => taskTemplate += `<dd>
-    <input type="checkbox">  - ${task} ${index}
+    <input type="checkbox">  - ${task}
     <button type="button" class="close text-danger" onclick="app.listController.deleteTask('${index}', '${this.id}')">
     <span>&times;</span>
     </button></input>
