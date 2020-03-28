@@ -11,12 +11,12 @@ export default class List {
   //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
   get Template() {
     return /*html*/ `
-    <div class="col-3 m-auto border border-white bg-white shadow">
+    <div class="col-12 col-md-3 m-3 border border-white bg-white shadow align-items-center">
       <button type="button" class="close text-primary" onclick="app.listController.delete('${this.id}')">
       <span>&times;</span>
       </button>
         <h1 class="text-primary">${this.title}</h1>
-        <form onsubmit="app.listController.addTask(event, '${this.id}')">
+        <form class="align-items-center" onsubmit="app.listController.addTask(event, '${this.id}')">
           <div class="form-group">
             <label class="text-primary" for="taskName">Items:</label>  
             <input type="text" name="taskName" class="form-control text-primary" placeholder="Type an item here..." aria-describedby="helpId">
