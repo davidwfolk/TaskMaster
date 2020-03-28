@@ -50,9 +50,8 @@ export default class ListController {
   _drawLists()
   }
 
-  deleteTask (taskId) {
-    
-
+  deleteTask (task) {
+    ListService.delete(task)
     _drawLists()
   }
 }
