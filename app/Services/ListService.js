@@ -36,8 +36,18 @@ class ListService {
    _store.saveState()
  }
 
- deleteTask() {
+ deleteTask(index, listId) {
+  if (confirm("Do you want to delete this list?") == true){ 
 
+    let list = _store.State.lists.find(list => list.id == listId)
+    list.tasks.splice(index, 1)
+  }
+  else {
+    return
+  }
+  
+ 
+  _store.saveState()
  }
 }
 

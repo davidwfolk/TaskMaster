@@ -30,15 +30,16 @@ export default class List {
   }
 
   get Task() {
-    let template = ''
-    this.tasks.forEach((task, index) => template += `<dd>
-      <input type="checkbox">${task} ${index}
-      <button type="button" class="close text-danger" onclick="app.listController.deleteTask('${task}''${index}')">
-      <span>&times;</span>
-      </button>
-      </dd>`)
+    let taskTemplate = ''
+    this.tasks.forEach((task, index) => taskTemplate += `<dd>
+    <input type="checkbox">  - ${task} ${index}
+    <button type="button" class="close text-danger" onclick="app.listController.deleteTask('${index}', '${this.id}')">
+    <span>&times;</span>
+    </button></input>
+    </dd>`)
     
-    return template
+    
+    return taskTemplate
   }
 
   }
