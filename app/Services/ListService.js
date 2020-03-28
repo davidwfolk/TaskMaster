@@ -16,9 +16,17 @@ class ListService {
   }
 
   delete(listId) {
-    _store.State.lists = _store.State.lists.filter(list => list.id != listId)
-    _store.saveState()
-}
+    if (confirm("Do you want to delete this list?") == true){ 
+
+        _store.State.lists = _store.State.lists.filter(list => list.id != listId)
+        _store.saveState()
+      }
+      else {
+        return
+      }
+    }
+ 
+
 
   addTask (newTaskData, listId) {
    let list = _store.State.lists.find(list => list.id == listId)
